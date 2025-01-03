@@ -1,0 +1,19 @@
+<div>
+    <div style="display: flex;align-items: center;flex-direction: column;">
+        <h1>Login</h1>
+        <form (ngSubmit)="login()">
+            <div style="display: flex;">
+                <label>User Email</label>
+                <input type="text" name="emailid" [(ngModel)]="user.emailid">
+            </div>
+            <div style="display: flex;">
+                <label>Password</label>
+                <input type="password" name="password" [(ngModel)]="user.password">
+            </div>
+            <div style="text-align: center;">
+                <button type="submit">submit</button>
+            </div>
+        </form>
+        <h6 style="text-decoration: underline;cursor: pointer;" routerLink="/register">If not a registered user, REGISTER HERE</h6>
+    </div>
+</div>

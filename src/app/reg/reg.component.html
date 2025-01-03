@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <form [formGroup]="registrationForm" (ngSubmit)="onsubmit()">
+        <label>Name</label>
+        <input type="text" class="form-control" placeholder="Firstname" formControlName="name" 
+        [ngClass]="{'is-invalid':submit && f.name.errors}">
+        <div *ngIf="submit && f.name.errors" class="invalid-feedback">
+            <div *ngIf="f.name.errors.required">Name required</div>
+        </div>
+
+        <label>phone</label>
+        <input type="number" class="form-control" placeholder="phone" formControlName="phone"
+        [ngClass]="{'is-invalid':submit && f.phone.errors}">
+        <div *ngIf="submit && f.phone.errors" class="invalid-feedback">
+            <div *ngIf="f.phone.errors.required">Phone required</div>
+        </div>
+
+        <label>email</label>
+        <input type="text" class="form-control" placeholder="email" formControlName="emailid"
+        [ngClass]="{'is-invalid':submit && f.emailid.errors}">
+        <div *ngIf="submit && f.emailid.errors" class="invalid-feedback">
+            <div *ngIf="f.emailid.errors.required">email required</div>
+            <div *ngIf="f.emailid.errors.pattern">Enter valid Email</div>
+        </div>
+
+        <label>Password</label>
+        <input type="password" class="form-control" placeholder="password" formControlName="password"
+        [ngClass]="{'is-invalid':submit && f.password.errors}">
+        <div *ngIf="submit && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password required</div>
+            <div *ngIf="f.password.errors.minLength">Password Must have Minimum 6 character</div>
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
